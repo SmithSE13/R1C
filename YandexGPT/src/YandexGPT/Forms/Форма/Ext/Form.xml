@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаСохранениеНастроек" id="98">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа сохранение настроек</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа сохранение настроек</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСохранениеНастроекРасширеннаяПодсказка" id="99"/>
+			<ChildItems>
+				<CheckBoxField name="ВсегдаСохранятьНастройки" id="95">
+					<DataPath>ВсегдаСохранятьНастройки</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВсегдаСохранятьНастройкиКонтекстноеМеню" id="96"/>
+					<ExtendedTooltip name="ВсегдаСохранятьНастройкиРасширеннаяПодсказка" id="97"/>
+				</CheckBoxField>
+				<InputField name="ПутьДляСохраненияФайлаНастроек" id="43">
+					<DataPath>ПутьДляСохраненияФайлаНастроек</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Top</TitleLocation>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<OpenButton>true</OpenButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПутьДляСохраненияФайлаНастроекКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="ПутьДляСохраненияФайлаНастроекРасширеннаяПодсказка" id="45">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сюда при закрытии формы сохраняется файл формата json с настройками, что вы укажете. 
+При повторном открытии обработки настройки будут считаны из файла.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="Opening">ПутьДляСохраненияФайлаНастроекОткрытие</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПутьДляСохраненияФайлаТелаЗапроса" id="46">
+					<DataPath>ПутьДляСохраненияФайлаТелаЗапроса</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Top</TitleLocation>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<OpenButton>true</OpenButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПутьДляСохраненияФайлаТелаЗапросаКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ПутьДляСохраненияФайлаТелаЗапросаРасширеннаяПодсказка" id="48">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сюда сохраняется отправляемый файл тела запроса.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="Opening">ПутьДляСохраненияФайлаТелаЗапросаОткрытие</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаАвторизация" id="93">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные авторизации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа авторизация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<ExtendedTooltip name="ГруппаАвторизацияРасширеннаяПодсказка" id="94"/>
+			<ChildItems>
+				<InputField name="ИдентификаторКаталога" id="16">
+					<DataPath>Объект.ИдентификаторКаталога</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ИдентификаторКаталогаКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ИдентификаторКаталогаРасширеннаяПодсказка" id="18">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Берется из личного кабинета &lt;link https://console.yandex.cloud&gt;console.yandex.cloud&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<UsualGroup name="ГруппаOAuth" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа o auth</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа o auth</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаOAuthРасширеннаяПодсказка" id="13"/>
+					<ChildItems>
+						<InputField name="OAuthТокен" id="3">
+							<DataPath>Объект.OAuthТокен</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="OAuthТокенКонтекстноеМеню" id="4"/>
+							<ExtendedTooltip name="OAuthТокенРасширеннаяПодсказка" id="5"/>
+						</InputField>
+						<Button name="ПолучитьOAuthТокен" id="14">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ПолучитьOAuthТокен</CommandName>
+							<ExtendedTooltip name="ПолучитьOAuthТокенРасширеннаяПодсказка" id="15"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаIAMТокен" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа IAMТокен</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа IAMТокен</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаIAMТокенРасширеннаяПодсказка" id="20"/>
+					<ChildItems>
+						<InputField name="IAMТокен" id="6">
+							<DataPath>Объект.IAMТокен</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>IAM-токен</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="IAMТокенКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="IAMТокенРасширеннаяПодсказка" id="8"/>
+						</InputField>
+						<Button name="ФормаПолучитьIAMТокен" id="1">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ПолучитьIAMТокен</CommandName>
+							<ExtendedTooltip name="ФормаПолучитьIAMТокенРасширеннаяПодсказка" id="2"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОсновныеНастройкиМоделиГенерации" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки модели генерации</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основные настройки модели генерации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаОсновныеНастройкиМоделиГенерацииРасширеннаяПодсказка" id="36"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаМодельРежим" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа модель режим</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа модель режим</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаМодельРежимРасширеннаяПодсказка" id="59"/>
+					<ChildItems>
+						<RadioButtonField name="ПереключательМоделей" id="37">
+							<DataPath>ПереключательМоделей</DataPath>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>YandexGPT Lite</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">YandexGPTLite</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Краткий пересказ</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">КраткийПересказ</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ПереключательМоделейКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="ПереключательМоделейРасширеннаяПодсказка" id="39"/>
+							<Events>
+								<Event name="OnChange">ПереключательМоделейПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<RadioButtonField name="ПереключательРежимов" id="55">
+							<DataPath>ПереключательРежимов</DataPath>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Промт-режим</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Промт</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Режим чата</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Чат</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ПереключательРежимовКонтекстноеМеню" id="56"/>
+							<ExtendedTooltip name="ПереключательРежимовРасширеннаяПодсказка" id="57"/>
+							<Events>
+								<Event name="OnChange">ПереключательРежимовПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<RadioButtonField name="ПереключательКоманд" id="108">
+							<DataPath>ПереключательКоманд</DataPath>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Запрос</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">completion</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Асинхронный запрос</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">completionAsync</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ПереключательКомандКонтекстноеМеню" id="109"/>
+							<ExtendedTooltip name="ПереключательКомандРасширеннаяПодсказка" id="110"/>
+							<Events>
+								<Event name="OnChange">ПереключательКомандПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНастройкиРежима" id="60">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки промт-режима</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа настройки режима</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Behavior>Usual</Behavior>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиРежимаРасширеннаяПодсказка" id="61"/>
+					<ChildItems>
+						<CheckBoxField name="stream" id="62">
+							<DataPath>stream</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="streamКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="streamРасширеннаяПодсказка" id="64"/>
+						</CheckBoxField>
+						<InputField name="temperature" id="71">
+							<DataPath>temperature</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="temperatureКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="temperatureРасширеннаяПодсказка" id="73"/>
+						</InputField>
+						<InputField name="maxTokens" id="68">
+							<DataPath>maxTokens</DataPath>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="maxTokensКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="maxTokensРасширеннаяПодсказка" id="70"/>
+						</InputField>
+						<CheckBoxField name="ЛогироватьЗапросы" id="121">
+							<DataPath>ЛогироватьЗапросы</DataPath>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЛогироватьЗапросыКонтекстноеМеню" id="122"/>
+							<ExtendedTooltip name="ЛогироватьЗапросыРасширеннаяПодсказка" id="123">
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>&lt;fontsize 11&gt;&lt;color #000000&gt;По умолчанию YandexGPT API сохраняет все данные запросов.
+&lt;/&gt;&lt;/&gt;&lt;fontsize 11&gt;&lt;color #000000&gt;Эта настройка добавляет в заголовки запросов опцию, отключающую логирование.&lt;/&gt;&lt;/&gt;</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Button name="ФормаЗапроситьОтвет" id="27">
+			<Type>UsualButton</Type>
+			<DefaultButton>true</DefaultButton>
+			<CommandName>Form.Command.ЗапроситьОтвет</CommandName>
+			<ExtendedTooltip name="ФормаЗапроситьОтветРасширеннаяПодсказка" id="28"/>
+		</Button>
+		<UsualGroup name="ГруппаЗадачаРежим" id="100">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа задача режим</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа задача режим</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗадачаРежимРасширеннаяПодсказка" id="101"/>
+			<ChildItems>
+				<InputField name="ЗадачаДляНейросети" id="32">
+					<DataPath>Объект.ЗадачаДляНейросети</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ЗадачаДляНейросетиКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ЗадачаДляНейросетиРасширеннаяПодсказка" id="34">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Опишите задачу для нейросети, кратко. Например, "Исправь ошибки в тексте" или "Придумай забавную историю про кота"</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<LabelDecoration name="ДекорацияМодель" id="102">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДекорацияМодель</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияМодельКонтекстноеМеню" id="103"/>
+					<ExtendedTooltip name="ДекорацияМодельРасширеннаяПодсказка" id="104"/>
+				</LabelDecoration>
+				<LabelDecoration name="ДекорацияРежим" id="105">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДекорацияРежим</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияРежимКонтекстноеМеню" id="106"/>
+					<ExtendedTooltip name="ДекорацияРежимРасширеннаяПодсказка" id="107"/>
+				</LabelDecoration>
+				<LabelDecoration name="ДекорацияКоманда" id="111">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДекорацияКоманда</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияКомандаКонтекстноеМеню" id="112"/>
+					<ExtendedTooltip name="ДекорацияКомандаРасширеннаяПодсказка" id="113"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ОписаниеЗапросаПользователя" id="52">
+			<DataPath>ОписаниеЗапросаПользователя</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запрос пользователя</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<AutoMaxHeight>false</AutoMaxHeight>
+			<MultiLine>true</MultiLine>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ОписаниеЗапросаПользователяКонтекстноеМеню" id="53"/>
+			<ExtendedTooltip name="ОписаниеЗапросаПользователяРасширеннаяПодсказка" id="54"/>
+		</InputField>
+		<UsualGroup name="ГруппаОтветНейросети" id="74">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ответ нейросети</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ответ нейросети</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтветНейросетиРасширеннаяПодсказка" id="75"/>
+			<ChildItems>
+				<InputField name="ОписаниеОтветаНейросети" id="49">
+					<DataPath>ОписаниеОтветаНейросети</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответ нейросети</v8:content>
+						</v8:item>
+					</Title>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<MultiLine>true</MultiLine>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ОписаниеОтветаНейросетиКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ОписаниеОтветаНейросетиРасширеннаяПодсказка" id="51"/>
+				</InputField>
+				<UsualGroup name="ГруппаАсинхронно" id="119">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа асинхронно</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа асинхронно</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаАсинхронноРасширеннаяПодсказка" id="120"/>
+					<ChildItems>
+						<Button name="ЗапросНаПолучениеИнформацииОбОперации" id="114">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ЗапросНаПолучениеИнформацииОбОперации</CommandName>
+							<ExtendedTooltip name="ЗапросНаПолучениеИнформацииОбОперацииРасширеннаяПодсказка" id="115"/>
+						</Button>
+						<InputField name="id" id="116">
+							<DataPath>id</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>id</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="idКонтекстноеМеню" id="117"/>
+							<ExtendedTooltip name="idРасширеннаяПодсказка" id="118"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПараметры" id="79">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа параметры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа параметры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="80"/>
+			<ChildItems>
+				<InputField name="inputTextTokens" id="81">
+					<DataPath>inputTextTokens</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Top</TitleLocation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="inputTextTokensКонтекстноеМеню" id="82"/>
+					<ExtendedTooltip name="inputTextTokensРасширеннаяПодсказка" id="83"/>
+				</InputField>
+				<InputField name="completionTokens" id="84">
+					<DataPath>completionTokens</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Top</TitleLocation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="completionTokensКонтекстноеМеню" id="85"/>
+					<ExtendedTooltip name="completionTokensРасширеннаяПодсказка" id="86"/>
+				</InputField>
+				<InputField name="totalTokens" id="87">
+					<DataPath>totalTokens</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Top</TitleLocation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="totalTokensКонтекстноеМеню" id="88"/>
+					<ExtendedTooltip name="totalTokensРасширеннаяПодсказка" id="89"/>
+				</InputField>
+				<InputField name="modelVersion" id="90">
+					<DataPath>modelVersion</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Top</TitleLocation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="modelVersionКонтекстноеМеню" id="91"/>
+					<ExtendedTooltip name="modelVersionРасширеннаяПодсказка" id="92"/>
+				</InputField>
+				<InputField name="status" id="76">
+					<DataPath>status</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>Top</TitleLocation>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="statusКонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="statusРасширеннаяПодсказка" id="78"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ЯндексGPT</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ОписаниеЗапросаПользователя" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание запроса пользователя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОписаниеОтветаНейросети" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание ответа нейросети</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="temperature" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Temperature</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>1</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПереключательМоделей" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Модель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПутьДляСохраненияФайлаНастроек" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь для сохранения файла настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПутьДляСохраненияФайлаТелаЗапроса" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь для сохранения файла тела запроса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПереключательРежимов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="stream" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>stream</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="maxTokens" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>maxTokens</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>4</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="inputTextTokens" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>inputTextTokens</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="completionTokens" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>completionTokens</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="totalTokens" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>totalTokens</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="modelVersion" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>modelVersion</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="status" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>status</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="messagesПользователяJson" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>messagesПользователяJson</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="messageАссистентаJson" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>messageАссистентаJson</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВсегдаСохранятьНастройки" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всегда сохранять</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПереключательКоманд" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтветКомандыСompletionAsync" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответ команды сompletion async</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="id" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>id</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЛогироватьЗапросы" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Логировать запросы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПолучитьIAMТокен" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить IAM-токен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить IAMТокен</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПолучитьIAMТокен</Action>
+		</Command>
+		<Command name="ПолучитьOAuthТокен" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить OAuth-токен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить o auth токен</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПолучитьOAuthТокен</Action>
+		</Command>
+		<Command name="ЗапроситьОтвет" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запросить ответ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запросить ответ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗапроситьОтвет</Action>
+		</Command>
+		<Command name="ЗапросНаПолучениеИнформацииОбОперации" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запрос на получение информации об операции</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запрос на получение информации об операции</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗапросНаПолучениеИнформацииОбОперации</Action>
+		</Command>
+	</Commands>
+</Form>
