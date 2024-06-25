@@ -36,7 +36,7 @@
 					<DataPath>ПутьДляСохраненияФайлаНастроек</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<TitleLocation>Top</TitleLocation>
-					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
 					<OpenButton>true</OpenButton>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ПутьДляСохраненияФайлаНастроекКонтекстноеМеню" id="44"/>
@@ -57,7 +57,7 @@
 					<DataPath>ПутьДляСохраненияФайлаТелаЗапроса</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<TitleLocation>Top</TitleLocation>
-					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
 					<OpenButton>true</OpenButton>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ПутьДляСохраненияФайлаТелаЗапросаКонтекстноеМеню" id="47"/>
