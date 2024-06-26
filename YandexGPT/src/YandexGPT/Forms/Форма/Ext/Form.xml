@@ -660,7 +660,6 @@
 					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</Type>
-			<SavedData>true</SavedData>
 		</Attribute>
 		<Attribute name="ПереключательМоделей" id="10">
 			<Title>
